@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ssl-https-client-demo
+
+  ssl.bundle.pem:
+    client:
+      keystore:
+        certificate: client/certs/client.crt
+        private-key: client/certs/client.key
+        private-key-password: 123456
+      truststore:
+        certificate: server/certs/server.crt
+
+server:
+  ssl:
+    bundle: client
+  port: 8080
+
